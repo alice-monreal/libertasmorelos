@@ -923,7 +923,7 @@
   position: relative;
   width: 860px;
   height: 225px;
-  margin: 30px auto 0;
+  margin: 0 auto;
   /*border: solid;*/
 }
 /* line 854, ../sass/main.scss */
@@ -1057,4 +1057,175 @@
 .opiniones_slider .slick-next {
   right: -34px;
   margin: 0;
+}
+
+/* Footer */
+/* line 979, ../sass/main.scss */
+#footer {
+  border: none;
+  overflow: hidden;
+}
+
+/* line 983, ../sass/main.scss */
+.footer_wrapper {
+  display: block;
+  position: relative;
+  margin: -15px 0 0;
+}
+/* line 987, ../sass/main.scss */
+.footer_wrapper .footer_container {
+  display: block;
+  position: relative;
+}
+/* line 991, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content {
+  display: block;
+  position: relative;
+}
+/* line 995, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row {
+  display: block;
+  position: relative;
+  clear: both;
+  padding: 0 0 20px 0;
+  border-bottom: gray solid 1px;
+  text-align: center;
+}
+/* line 1002, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.links {
+  border: none;
+}
+/* line 1004, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.links .footer_column {
+  margin: 30px 60px;
+}
+/* line 1009, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.data .data_container {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 385px;
+  height: 55px;
+  padding: 40px 0 0;
+}
+/* line 1018, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights {
+  border: none;
+  padding: 30px 0 0;
+}
+/* line 1021, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container {
+  display: block;
+  position: relative;
+  width: 500px;
+  height: 20px;
+  margin: 0 auto;
+}
+/* line 1027, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container p, .footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container a {
+  float: left;
+  font-size: 14px;
+}
+/* line 1031, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container .footer_column_link {
+  margin: 0 5px;
+  cursor: pointer;
+}
+/* line 1035, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container .footer_column_separator {
+  margin: 0;
+}
+/* line 1038, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row.rights .rights_container .footer_column_title {
+  margin: 0 20px;
+}
+/* line 1043, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_title {
+  display: block;
+  position: relative;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+/* line 1051, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_social_networks {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 40px;
+}
+/* line 1057, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_social_networks .footer_social_network {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0 30px;
+  cursor: pointer;
+}
+/* line 1065, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 30px;
+}
+/* line 1070, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column.email {
+  display: block;
+  position: relative;
+}
+/* line 1074, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column.phone {
+  display: block;
+  position: relative;
+}
+/* line 1079, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column_title {
+  display: block;
+  position: relative;
+}
+/* line 1084, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column_links {
+  display: block;
+  position: relative;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 16px;
+}
+/* line 1090, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column_link {
+  display: block;
+  position: relative;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: lighter;
+}
+/* line 1098, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_email {
+  display: block;
+  position: relative;
+  float: left;
+}
+/* line 1103, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column_email {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0 10px;
+  font-size: 18px;
+}
+/* line 1110, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_phone {
+  display: block;
+  position: relative;
+  float: left;
+}
+/* line 1115, ../sass/main.scss */
+.footer_wrapper .footer_container .footer_content .footer_row .footer_column_phone {
+  display: block;
+  position: relative;
+  position: relative;
+  float: left;
+  margin: 0 10px;
+  font-size: 18px;
 }
