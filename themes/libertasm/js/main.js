@@ -25,4 +25,13 @@ jQuery( document ).ready(function( $ ) {
 	    slidesToShow: 1,
 	    slidesToScroll: 1
   	});
+
+  	$('.opiniones_slider').slick({
+	    dots: false,
+	    infinite: true,
+	    speed: 300,
+	  	slidesToShow: 1,
+	  	centerMode: false,
+	  	variableWidth: true
+	});
 });

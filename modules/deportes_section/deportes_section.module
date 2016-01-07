@@ -79,7 +79,12 @@ function deportes_section_block_view($delta = '') {
 
     if($path == "node/6"){
 
-      $slider = "<div class='deportes_slider'>";
+      $slider = "
+      <div class='deportes_title'> 
+          <p> Deportes </p>
+      </div>
+      <div class='deportes_slider'>
+      ";
       foreach ($slides as $slide) {
         $url = '"'.$base_url.'/sites/default/files/'.$slide['cover'].'"';
 
