@@ -12,8 +12,17 @@ jQuery( document ).ready(function( $ ) {
 	  slidesToShow: 3,
 	  slidesToScroll: 1,
 	  asNavFor: '.slider-for',
-	  dots: true,
+	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true
 	});
+
+	$('.deportes_slider').slick({
+		// autoplay: true,    
+	    dots: true,
+	    infinite: true,
+	    speed: 300,
+	    slidesToShow: 1,
+	    slidesToScroll: 1
+  	});
 });

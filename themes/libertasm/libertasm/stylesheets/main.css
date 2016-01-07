@@ -213,7 +213,7 @@
 .recent_slide_background {
   position: relative;
   background-position: center;
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: #c5c5c5;
 }
@@ -377,7 +377,7 @@
   margin: 25px 0 0;
   bottom: 0;
   /*background-color: #e5e1e1;	    */
-  overflow: hidden;
+  /*overflow: hidden;*/
   /*border: solid 1px red;*/
 }
 /* line 342, ../sass/main.scss */
@@ -425,15 +425,412 @@
 /* line 382, ../sass/main.scss */
 .regiones_slider, .regiones_slide {
   /* , .regiones_slide_background{ */
-  width: 900px;
-  height: 330px;
+  width: 860px;
+  height: 156px;
   margin: 0 auto;
 }
 
-/* line 392, ../sass/main.scss */
+/* line 389, ../sass/main.scss */
+.regiones_slider .slick-prev {
+  left: -25px;
+  margin: -15px 0 0;
+}
+/* line 393, ../sass/main.scss */
 .regiones_slider .regiones_slide {
   position: relative;
   width: 235px;
   height: 150px;
   background-color: #e5e1e1;
+}
+/* line 399, ../sass/main.scss */
+.regiones_slider .slick-next {
+  right: -25px;
+  margin: -15px 0 0;
+}
+
+/* Sección Destacados */
+/* line 407, ../sass/main.scss */
+.destacados_section {
+  display: block;
+  position: relative;
+  float: left;
+  width: 410px;
+  height: 470px;
+  margin: 35px auto 0;
+  /*background-color: gray;  */
+  /*border: solid;*/
+}
+/* line 417, ../sass/main.scss */
+.destacados_section .destacados_title {
+  display: block;
+  position: relative;
+  width: 380px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 0;
+  /*background-color: #00694c;	    */
+  text-align: center;
+}
+/* line 427, ../sass/main.scss */
+.destacados_section p {
+  display: block;
+  position: relative;
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #353333;
+}
+/* line 437, ../sass/main.scss */
+.destacados_section .destacados_container {
+  display: block;
+  position: relative;
+  width: 410px;
+  height: 410px;
+  margin: 20px 0 0;
+  bottom: 0;
+  background-color: #e5e1e1;
+  /*overflow: hidden;*/
+  /*border: solid 1px red;*/
+}
+/* line 447, ../sass/main.scss */
+.destacados_section .destacados_container .destacados_content {
+  display: block;
+  position: relative;
+  float: left;
+  width: auto;
+  max-height: none;
+  margin: 15px 10px 0;
+  cursor: pointer;
+}
+/* line 455, ../sass/main.scss */
+.destacados_section .destacados_container .destacados_content .destacados_content_title {
+  display: block;
+  position: relative;
+  margin: 0 0 7px 20px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: left;
+  text-transform: capitalize;
+  color: #353333;
+}
+/* line 465, ../sass/main.scss */
+.destacados_section .destacados_container .destacados_content .destacados_content_image {
+  display: block;
+  position: relative;
+  float: left;
+  width: 130px;
+  height: 75px;
+  margin: 0 8px 0 20px;
+}
+/* line 473, ../sass/main.scss */
+.destacados_section .destacados_container .destacados_content .destacados_content_description {
+  display: block;
+  position: relative;
+  float: left;
+  width: 225px;
+  height: 75px;
+  font-family: Lato;
+  font-size: 14px;
+  color: #353333;
+  /*border: solid 1px blue;*/
+}
+/* line 484, ../sass/main.scss */
+.destacados_section .destacados_container .destacados_content .destacados_content_separator {
+  clear: both;
+  width: 60%;
+  height: 0px;
+  margin: 0 auto;
+  padding: 10px 0 0;
+  border-bottom: #bbbbbb solid 1px;
+}
+
+/* Publicidad Vertical */
+/* line 498, ../sass/main.scss */
+.publicidad_vertical_container {
+  display: block;
+  position: relative;
+  float: right;
+  width: 335px;
+  height: 320px;
+  margin: 110px 30px 0;
+  padding: 30px 0;
+  background-color: #ecebeb;
+  text-align: center;
+}
+/* line 508, ../sass/main.scss */
+.publicidad_vertical_container .publicidad_vertical_text {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 125px 0 0;
+  padding: 0;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 40px;
+  color: #9f9f9f;
+}
+
+/* Twitter */
+/* line 522, ../sass/main.scss */
+.twitter_container {
+  display: block;
+  position: relative;
+  clear: both;
+  float: right;
+  width: 335px;
+  height: 320px;
+  margin: 100px 30px 0;
+  padding: 30px 0;
+  background-color: #ecebeb;
+  text-align: center;
+}
+/* line 533, ../sass/main.scss */
+.twitter_container .twitter_text {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 125px 0 0;
+  padding: 0;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 40px;
+  color: #9f9f9f;
+}
+
+/* Publicidad Horizontal */
+/* line 546, ../sass/main.scss */
+#block-publicidad-horizontal-articles {
+  clear: both;
+  width: 930px;
+  padding: 70px 0 0;
+  /*border: solid;*/
+}
+/* line 551, ../sass/main.scss */
+#block-publicidad-horizontal-articles .content {
+  width: 925px;
+  margin: 0 auto;
+  /*border: solid red;*/
+}
+/* line 555, ../sass/main.scss */
+#block-publicidad-horizontal-articles .content .publicidad_horizontal_container {
+  display: block;
+  position: relative;
+  clear: both;
+  width: 100%;
+  height: 115px;
+  margin: 0;
+  padding: 0;
+  background-color: #ecebeb;
+  text-align: center;
+}
+/* line 565, ../sass/main.scss */
+#block-publicidad-horizontal-articles .content .publicidad_horizontal_container .publicidad_horizontal_text {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0 0;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 40px;
+  color: #9f9f9f;
+}
+
+/* Sección Miscelaneas */
+/* line 581, ../sass/main.scss */
+.miscelaneas_section {
+  display: block;
+  position: relative;
+  float: left;
+  width: 410px;
+  height: 450px;
+  margin: 70px 0 0;
+  background-color: #e5e1e1;
+  /*border: solid;*/
+}
+/* line 591, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_title {
+  display: block;
+  position: relative;
+  width: 380px;
+  height: 40px;
+  margin: 20px auto;
+  padding: 0;
+  text-align: center;
+}
+/* line 600, ../sass/main.scss */
+.miscelaneas_section p {
+  display: block;
+  position: relative;
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #353333;
+}
+/* line 610, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container {
+  display: block;
+  position: relative;
+  width: 410px;
+  height: 368px;
+  margin: 5px 0 0;
+  bottom: 0;
+  background-color: #e5e1e1;
+  /*border: solid 1px red;*/
+}
+/* line 619, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content {
+  display: block;
+  position: relative;
+  float: left;
+  width: auto;
+  max-height: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+/* line 627, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content .miscelaneas_content_image {
+  display: block;
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 110px;
+  margin: 0 0 0 15px;
+}
+/* line 635, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content .miscelaneas_content_info {
+  display: block;
+  position: relative;
+  float: right;
+  width: 175px;
+  max-height: 110px;
+  margin-left: 10px;
+  /*border: solid 1px red;*/
+}
+/* line 643, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content .miscelaneas_content_info .miscelaneas_content_title {
+  display: block;
+  position: relative;
+  margin: 0 0 7px 10px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: capitalize;
+  color: #353333;
+}
+/* line 654, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content .miscelaneas_content_info .miscelaneas_content_description {
+  display: block;
+  position: relative;
+  float: left;
+  width: 225px;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #353333;
+  /*border: solid 1px blue;*/
+}
+/* line 666, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content_separator {
+  clear: both;
+  width: 60%;
+  height: 0px;
+  margin: 0 0 30px 135px;
+  padding: 30px 0 0;
+  border-bottom: #bbbbbb solid 1px;
+}
+/* line 674, ../sass/main.scss */
+.miscelaneas_section .miscelaneas_container .miscelaneas_content_see_more {
+  display: block;
+  position: relative;
+  clear: both;
+  float: right;
+  margin: -15px 45px 0 0;
+  font-family: Lato, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #353333;
+}
+
+/* Slider Deportes*/
+/* line 691, ../sass/main.scss */
+#block-deportes-section-articles {
+  clear: both;
+  width: 930px;
+  margin: 0 auto;
+  padding: 70px 0 0;
+}
+/* line 696, ../sass/main.scss */
+#block-deportes-section-articles .content {
+  width: 930px;
+}
+
+/* line 700, ../sass/main.scss */
+.deportes_slider, .deportes_slide, .deportes_slide_background {
+  width: 850px;
+  height: 330px;
+  margin: 0 auto;
+}
+
+/* line 706, ../sass/main.scss */
+.deportes_slide_background {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #c5c5c5;
+}
+
+/* line 715, ../sass/main.scss */
+.deportes_slider .slick-prev {
+  left: -35px;
+}
+/* line 718, ../sass/main.scss */
+.deportes_slider .slick-next {
+  right: -35px;
+}
+
+/* line 723, ../sass/main.scss */
+.deportes_slide_info {
+  position: absolute;
+  width: 100%;
+  height: 28%;
+  bottom: 0;
+  background-image: url("../../images/menu-mask.png");
+}
+/* line 729, ../sass/main.scss */
+.deportes_slide_info p {
+  display: block;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: none;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-style: italic;
+  color: #f4f4f4;
+  text-shadow: 2px 2px 7px #000000;
+  /*border: solid 1px red;*/
+}
+
+/* line 743, ../sass/main.scss */
+.deportes_slide_title {
+  float: right;
+  width: 100%;
+  max-width: 800px;
+  max-height: 50px;
+  margin: -25px 50px 0 0;
+  font-size: 32px;
+  text-align: right;
+}
+
+/* line 753, ../sass/main.scss */
+.deportes_slide_description {
+  clear: both;
+  width: 100%;
+  max-width: 850px;
+  max-height: 50px;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  text-align: center;
 }

@@ -5,16 +5,16 @@
  *article.module
  *
  */
-function regiones_section_block_info(){
+function destacados_section_block_info(){
   // This example comes from node.module.
   $blocks['articles'] = array(
-    'info' => t('Regiones Section Module'),
+    'info' => t('Destacados Section Module'),
   );
 
   return $blocks;
 }
 
-function regiones_section_block_view($delta = '') {
+function destacados_section_block_view($delta = '') {
   // This example is adapted from node.module.
   $block = array();
 
@@ -22,17 +22,17 @@ function regiones_section_block_view($delta = '') {
     case 'articles':
     Global $base_url;
 
-    $regiones = array();
-    $regionesTitles = array(3 => "norte", 4 => "centro", 5 => "sur", 6 => "poniente");
-    // print_r("regionesTitles: ");
-    // print_r($regionesTitles);
-    for($i = 3; $i < 7; $i++){
+    $destacados = array();
+    $destacadosTitles = array(0 => "ejecutivo", 1 => "legislativo", 2 => "judicial");
+    // print_r("destacadosTitles: ");
+    // print_r($destacadosTitles);
+    for($i = 0; $i < 3; $i++){
       $item = $i+1;
       $query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, B.entity_id, B.field_type_value FROM {node} A INNER JOIN {field_data_field_type} B ON A.nid = B.entity_id WHERE A.type = :type AND B.field_type_value = ".$item." ORDER BY nid DESC LIMIT 1";
-      $region = db_query($query, array(':type' => 'articulo'))->fetchAll();
+      $destacado = db_query($query, array(':type' => 'articulo'))->fetchAll();
 
-      if(!empty($region)){
-        $a_id = $region[0]->nid;
+      if(!empty($destacado)){
+        $a_id = $destacado[0]->nid;
 
         // Execute queries to get slide info: image, title (description).
         if (is_numeric($a_id)){
@@ -66,54 +66,51 @@ function regiones_section_block_view($delta = '') {
       }
 
       $image_url = '"'.$base_url.'/sites/default/files/'.$image_file.'"';
-      $region[0]->image_name = $image_file;
-      $region[0]->image_url  = $image_url;
+      $destacado[0]->image_name = $image_file;
+      $destacado[0]->image_url  = $image_url;
 
-      $region[0]->description = $title; 
+      $destacado[0]->description = $title; 
 
-      $region[0]->title = $regionesTitles[$i];
+      $destacado[0]->title = $destacadosTitles[$i];
 
-      array_push($regiones, $region);
+      array_push($destacados, $destacado);
     }
 
-    // print_r('regiones -> ');
-    // print_r($regiones);
+    // print_r('destacados -> ');
+    // print_r($destacados);
 
 
     // Get current path
     $path = current_path();
     if($path == "node/6"){
-      //regiones_slider
-      $section = "
-      <div class='regiones_section'>
-        <div class='regiones_title'> 
-          <p> Regiones </p>
-        </div>
-        <div class='regiones_container'>";
-      $section .= "<div class='regiones_slider'>";
 
-      foreach ($regiones as $region) {
-        // print_r("region");
-        // print_r($region);
+      $section = "
+      <div class='destacados_section'>
+        <div class='destacados_title'> 
+          <p> Destacados </p>
+        </div>
+        <div class='destacados_container'>";
+
+      foreach ($destacados as $destacado) {
+        // print_r("destacado");
+        // print_r($destacado);
         // Link: Redirect to HOME if the article validation is empty.
         $section .= "
-          <a href='http://libertasmorelos.lo/node/".$region[0]->nid."'>
-            <div class='regiones_slide'>
-              <div class='regiones_content ".$region[0]->title."'> 
-                <p class='regiones_content_title'> ".$region[0]->title." </p>
-                <img class='regiones_content_image' src=".$region[0]->image_url." />
-                <p class='regiones_content_description'> ".$region[0]->description." </p>                
-              </div>
-            </div>
+          <a href='http://libertasmorelos.lo/node/".$destacado[0]->nid."'>
+          <div class='destacados_content ".$destacado[0]->title."'> 
+            <p class='destacados_content_title'> ".$destacado[0]->title." </p>
+            <img class='destacados_content_image' src=".$destacado[0]->image_url." />
+            <p class='destacados_content_description'> ".$destacado[0]->description." </p>
+            <div class='destacados_content_separator'></div>
+          </div>
           </a>";
       }
 
-      $section .= "</div>";
       $section .= "
         </div>
       </div>";
 
-      $block['subject'] = t(''); //This is regiones Section Block
+      $block['subject'] = t(''); //This is destacados Section Block
       $block['content'] = $section;
     }
       break;

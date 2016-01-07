@@ -183,7 +183,7 @@
 .recent_slide_background{
 	position: relative;
 	background-position: center;
-	background-size: 100%;
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-color: #c5c5c5;
 }
@@ -337,7 +337,7 @@
 	    margin: 25px 0 0;
 	    bottom: 0;	    	    
 	    /*background-color: #e5e1e1;	    */
-	    overflow: hidden;
+	    /*overflow: hidden;*/
 	    /*border: solid 1px red;*/
 		.regiones_content{
 			display: block;
@@ -380,14 +380,15 @@
 }
 
 .regiones_slider, .regiones_slide{ /* , .regiones_slide_background{ */
-	width: 900px;
-	height: 330px;
+	width: 860px;
+	height: 156px;
 	margin: 0 auto;
 }
 
 .regiones_slider{
 	.slick-prev{
-
+		left: -25px;
+		margin: -15px 0 0;
 	}
 	.regiones_slide{
 	    position: relative;
@@ -395,7 +396,367 @@
 	    height: 150px;
 	    background-color: #e5e1e1;
 	}
-	.slick-next{
-		
+	.slick-next{		
+		right: -25px;
+		margin: -15px 0 0;
 	}
+}
+
+/* Sección Destacados */
+
+.destacados_section{
+	display: block;
+	position: relative;
+	float: left;
+    width: 410px;
+    height: 470px;
+    margin: 35px auto 0;
+    /*background-color: gray;  */
+    /*border: solid;*/
+
+	.destacados_title{
+		display: block;
+		position: relative;
+		width: 380px;
+	    height: 40px;
+	    margin: 0 auto;
+	    padding: 0;
+	    /*background-color: #00694c;	    */
+	    text-align: center;	    
+	}
+	p{
+		display: block;
+		position: relative;
+		margin: 0;
+	    font-family: Roboto, Helvetica, sans-serif;
+	    font-size: 24px;
+	    font-weight: 200;
+	    color: #353333;
+	}
+
+	.destacados_container{
+		display: block;
+		position: relative;
+		width: 410px;
+	    height: 410px;
+	    margin: 20px 0 0;
+	    bottom: 0;	    	    
+	    background-color: #e5e1e1;	    
+	    /*overflow: hidden;*/
+	    /*border: solid 1px red;*/
+		.destacados_content{
+			display: block;
+			position: relative;
+			float: left;
+    		width: auto;
+    		max-height: none;
+    		margin: 15px 10px 0;
+    		cursor: pointer;
+			.destacados_content_title{
+				display: block;
+				position: relative;    
+			    margin: 0 0 7px 20px;
+			    font-family: Lato, Helvetica, sans-serif;    
+			    font-size: 16px;
+			    text-align: left;
+			    text-transform: capitalize;
+			    color: #353333;
+			}
+			.destacados_content_image{
+				display: block;
+				position: relative;				
+			    float: left;
+				width: 130px;
+			    height: 75px;
+			    margin: 0 8px 0 20px;
+			}
+			.destacados_content_description{
+				display: block;
+				position: relative;				
+			    float: left;
+			    width: 225px;
+			    height: 75px;			    
+			    font-family: Lato;
+			    font-size: 14px;
+			    color: #353333;
+			    /*border: solid 1px blue;*/
+			}
+			.destacados_content_separator{
+				clear: both;			    
+			    width: 60%;
+			    height: 0px;
+			    margin: 0 auto;
+			    padding: 10px 0 0;
+			    border-bottom: #bbbbbb solid 1px;
+			}
+		}
+	}
+}
+
+
+/* Publicidad Vertical */
+.publicidad_vertical_container{
+	display: block;
+    position: relative;
+    float: right;
+    width: 335px;
+    height: 320px; 
+    margin: 110px 30px 0;
+    padding: 30px 0;
+    background-color: #ecebeb;
+    text-align: center;
+    .publicidad_vertical_text{
+    	display: block;
+	    position: relative;	    
+	    width: 100%;
+	    margin: 125px 0 0;
+	    padding: 0;
+	    font-family: Lato, Helvetica, sans-serif;
+	    font-size: 40px;
+	    color: #9f9f9f;
+    }
+}
+
+
+/* Twitter */
+.twitter_container{
+	display: block;
+    position: relative;
+    clear: both;
+    float: right;
+    width: 335px;
+    height: 320px; 
+    margin: 100px 30px 0;
+    padding: 30px 0;
+    background-color: #ecebeb;
+    text-align: center;
+    .twitter_text{
+    	display: block;
+	    position: relative;	    
+	    width: 100%;
+	    margin: 125px 0 0;
+	    padding: 0;
+	    font-family: Lato, Helvetica, sans-serif;
+	    font-size: 40px;
+	    color: #9f9f9f;
+    }
+}
+
+/* Publicidad Horizontal */
+#block-publicidad-horizontal-articles{
+	clear: both;
+    width: 930px;
+    padding: 70px 0 0;
+    /*border: solid;*/
+	.content{
+	    width: 925px;
+	    margin: 0 auto;
+    	/*border: solid red;*/
+		.publicidad_horizontal_container{
+			display: block;
+		    position: relative;
+		    clear: both;
+		    width: 100%;
+		    height: 115px;    
+		    margin: 0;
+		    padding: 0;
+		    background-color: #ecebeb;
+		    text-align: center;
+		    .publicidad_horizontal_text{
+		    	display: block;
+			    position: relative;	    
+			    width: 100%;
+			    margin: 0;
+			    padding: 30px 0 0;
+			    font-family: Lato, Helvetica, sans-serif;
+			    font-size: 40px;
+			    color: #9f9f9f;
+		    }
+		}
+	}
+}
+
+/* Sección Miscelaneas */
+
+.miscelaneas_section{
+	display: block;
+	position: relative;
+	float: left;
+    width: 410px;
+    height: 450px;
+    margin: 70px 0 0;
+    background-color: #e5e1e1;
+    /*border: solid;*/
+
+	.miscelaneas_title{
+		display: block;
+		position: relative;
+		width: 380px;
+	    height: 40px;
+	    margin: 20px auto;
+	    padding: 0;
+	    text-align: center;	    
+	}
+	p{
+		display: block;
+		position: relative;
+		margin: 0;
+	    font-family: Roboto, Helvetica, sans-serif;
+	    font-size: 24px;
+	    font-weight: 200;
+	    color: #353333;
+	}
+
+	.miscelaneas_container{
+		display: block;
+		position: relative;
+		width: 410px;
+	    height: 368px;
+	    margin: 5px 0 0;
+	    bottom: 0;	    	    
+	    background-color: #e5e1e1;
+	    /*border: solid 1px red;*/
+		.miscelaneas_content{
+			display: block;
+			position: relative;
+			float: left;
+    		width: auto;
+    		max-height: none;
+    		margin: 0 10px;
+    		cursor: pointer;			
+			.miscelaneas_content_image{
+				display: block;
+				position: relative;				
+			    float: left;
+				width: 150px;
+    			height: 110px;
+			    margin: 0 0 0 15px;
+			}
+			.miscelaneas_content_info{
+				display: block;
+			    position: relative;
+			    float: right;
+			    width: 175px;	
+			    max-height: 110px;		    
+			    margin-left: 10px;
+			    /*border: solid 1px red;*/
+				.miscelaneas_content_title{
+					display: block;
+					position: relative;				    
+				    margin: 0 0 7px 10px;
+				    font-family: Lato, Helvetica, sans-serif;    
+				    font-size: 16px;
+				    font-weight: bold;
+				    text-align: left;
+				    text-transform: capitalize;
+				    color: #353333;
+				}
+				.miscelaneas_content_description{
+					display: block;
+					position: relative;				
+				    float: left;
+				    width: 225px;
+				    font-family: Lato, Helvetica, sans-serif;
+				    font-size: 14px;
+				    color: #353333;
+				    /*border: solid 1px blue;*/
+				}
+			}
+		}		
+		.miscelaneas_content_separator{
+			clear: both;			    
+		    width: 60%;
+		    height: 0px;
+		    margin: 0 0 30px 135px;
+			padding: 30px 0 0;
+		    border-bottom: #bbbbbb solid 1px;
+		}
+		.miscelaneas_content_see_more{
+			display: block;
+		    position: relative;
+		    clear: both;
+		    float: right;
+		    margin: -15px 45px 0 0;
+		    font-family: Lato, Helvetica, sans-serif;
+		    font-size: 16px;
+		    font-weight: bold;
+    		text-decoration: none;		    
+		    color: #353333;
+		}
+	}
+}
+
+/* Slider Deportes*/
+
+#block-deportes-section-articles{
+	clear: both;
+	width: 930px;
+    margin: 0 auto;
+    padding: 70px 0 0;
+    .content{
+    	width: 930px;
+    }
+}
+.deportes_slider, .deportes_slide, .deportes_slide_background{
+	width: 850px;
+	height: 330px;
+	margin: 0 auto;
+}
+
+.deportes_slide_background{
+	position: relative;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #c5c5c5;
+}
+
+.deportes_slider{
+	.slick-prev{
+		left: -35px;
+	}
+	.slick-next{
+		right: -35px;
+	}
+}
+
+.deportes_slide_info{
+    position: absolute;
+    width: 100%;
+	height: 28%;	
+    bottom: 0;
+    background-image: url("../../images/menu-mask.png");
+	p{		
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		max-width: none;
+		font-family: Roboto, Helvetica, sans-serif;
+		font-style: italic;
+		color: #f4f4f4;	
+    	text-shadow: 2px 2px 7px #000000;
+    	/*border: solid 1px red;*/
+	}
+}
+
+.deportes_slide_title{
+	float: right;
+	width: 100%;
+    max-width: 800px;
+    max-height: 50px;
+   	margin: -25px 50px 0 0;
+    font-size: 32px;    
+    text-align: right;
+}
+
+.deportes_slide_description{
+	clear: both;
+    width: 100%;
+    max-width: 850px;
+    max-height: 50px;
+    margin: 0;
+    padding: 0;	 
+    font-size: 13px;
+    text-align: center;
 }

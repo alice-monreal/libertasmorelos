@@ -5,16 +5,16 @@
  *article.module
  *
  */
-function recent_articles_slider_block_info(){
+function deportes_section_block_info(){
   // This example comes from node.module.
   $blocks['articles'] = array(
-    'info' => t('Recent Articles Slider'),
+    'info' => t('Deportes Section Slider'),
   );
 
   return $blocks;
 }
 
-function recent_articles_slider_block_view($delta = '') {
+function deportes_section_block_view($delta = '') {
   // This example is adapted from node.module.
   $block = array();
 
@@ -79,18 +79,18 @@ function recent_articles_slider_block_view($delta = '') {
 
     if($path == "node/6"){
 
-      $slider = "<div class='recent_slider'>";
+      $slider = "<div class='deportes_slider'>";
       foreach ($slides as $slide) {
         $url = '"'.$base_url.'/sites/default/files/'.$slide['cover'].'"';
 
         // Link: Redirect to HOME if the article validation is empty.
         $slider .= 
         " <a href='http://libertasmorelos.lo/node/".$slide['id']."'>
-            <div class='recent_slide'>
-            	<div class='recent_slide_background' style='background-image: url(".$url.")'>
-                <div class='recent_slide_info'>
-                  <p class='slide_title'>".$slide['title']."</p>
-                  <p class='slide_description'>".$slide['description']."</p>
+            <div class='deportes_slide'>
+            	<div class='deportes_slide_background' style='background-image: url(".$url.")'>
+                <div class='deportes_slide_info'>
+                  <p class='deportes_slide_title'>".$slide['title']."</p>
+                  <p class='deportes_slide_description'>".$slide['description']."</p>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ function recent_articles_slider_block_view($delta = '') {
       }
       $slider .= "</div>";
 
-      $block['subject'] = t(''); //This is my Recent Articles Slider Block
+      $block['subject'] = t(''); //This is my deportes Articles Slider Block
       $block['content'] = $slider;
     }
     break;
