@@ -7,7 +7,7 @@
 }
 /* Content types tabs */
 .tabs{
-	display: none !important;
+	/*display: none !important;*/
 }
 /* Create Artículo */
 .text-summary-wrapper.text-summary-wrapper-processed{
@@ -16,6 +16,13 @@
 
 #page, #main-wrapper{
 	background: #fff !important;
+}
+
+.breadcrumb{
+	display: none;
+}
+#page-title{
+	display: none;
 }
 
 #header{

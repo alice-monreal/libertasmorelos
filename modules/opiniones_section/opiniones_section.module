@@ -98,7 +98,7 @@ function opiniones_section_block_view($delta = '') {
           <div class='opiniones_fix_section'>
             <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
             <div class='opiniones_fix_info'>
-              <p class='opiniones_fix_title'> This is an example </p>
+              <p class='opiniones_fix_title'> Desde los Laureles por Teodoro Renter&iacute;a </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ function opiniones_section_block_view($delta = '') {
           <div class='opiniones_fix_section'>
             <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
             <div class='opiniones_fix_info'>
-              <p class='opiniones_fix_title'> This is an example </p>
+              <p class='opiniones_fix_title'> La ley de Herodes por  </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
             </div>
           </div>
@@ -116,7 +116,7 @@ function opiniones_section_block_view($delta = '') {
           <div class='opiniones_fix_section'>
             <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
             <div class='opiniones_fix_info'>
-              <p class='opiniones_fix_title'> This is an example </p>
+              <p class='opiniones_fix_title'> Contratiempo por </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
             </div>
           </div>

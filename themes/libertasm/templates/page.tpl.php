@@ -219,7 +219,125 @@
           <?php print render($action_links); ?>
         </ul>
       <?php endif; ?>
-      <?php print render($page['content']); ?>
+      <?php
+
+        // articulo(s)
+        $nid = 0;
+        if (arg(0) == 'node' && is_numeric(arg(1))) {
+            $nid = arg(1);
+        }
+
+        $node = node_load($nid);
+
+        // if ($node) {
+        //   // print "Node: $node->nid with title $node->title";
+        // } else {
+        //   // print "NODE IS EMPTY";
+        // }
+
+        // print_r($page["content"]["system_main"]["nodes"][$node->nid]);
+
+        // print_r($page["content"]["system_main"]["nodes"][$node->nid]["#bundle"]);
+        // print_r("node id: ");
+        // print_r($node->nid);
+        $content = $page["content"]["system_main"]["nodes"][$node->nid];
+        $content_type = $page["content"]["system_main"]["nodes"][$node->nid]["#bundle"];
+        // print_r("content");
+        // print_r($content["body"]["#object"]);
+        // print_r("content_type");
+        // print_r($content_type);
+
+        // Cover Image
+        Global $base_url;
+        // print_r(" Global, base url: ");
+        // print_r($base_url);
+        $cover_image =$content["body"]["#object"]->field_image_cover["und"][0]["filename"];
+        $cover = $base_url.'/sites/default/files/'.$cover_image;
+
+
+        // Cover Title
+        $cover_title = $content["body"]["#object"]->field_title["und"][0]["value"];
+
+        // Cover Description
+        $cover_description = $content["body"]["#object"]->field_description["und"][0]["value"];
+
+        // Author
+        $author = $content["body"]["#object"]->field_author["und"][0]["value"];
+
+        // Date (de la publicación)
+        $post_date = $content["body"]["#object"]->field_date["und"][0]["value"];
+
+        // Profile image 
+        $profile = $content["body"]["#object"]->field_image_profile["und"][0]["filename"];
+
+        // Body
+        $body = $content["body"]["#object"]->body["und"][0]["value"];
+
+
+        // print_r("  cover  ");
+        // print_r($cover);
+
+        $redes_sociales = $page['content']['service_links_service_links']['#children'];
+
+        if($content_type == "articulo"){
+        ?>
+
+          <div class="article_cover_container" style="background-image: url('<?php print $cover?>');">
+            <div class="article_cover_content">
+              <p class="article_cover_title"> <?php print $cover_title ?> </p>
+              <p class="article_cover_description"> <?php print $cover_description ?>  </p>
+            </div>
+          </div>
+
+          <div class="article_social_buttons">
+            <p> Social buttons </p>
+          </div>
+
+          <div class="article_container">
+            <p> Artcile body </p>
+            <p> <?php print $author ?>, <?php print $post_date ?> </p>
+
+            <p> <?php print $body ?> </p>
+          </div>
+
+          <div class="article_adds">
+            <p> publicidad /p>
+          </div>
+
+          <div class="article_images_gallery">
+            <p> galer&iacute;a de im&aacute;genes </p>
+          </div>
+
+          <div class="article_releated_notes">
+            <p> notas relacionadas </p>
+          </div>
+
+          <div class="article_comments">
+            <p> comentarios </p>
+          </div>
+
+          <div class="article_comment_form">
+            <p> formulario de comentario </p>
+          </div>
+
+        <?php
+          // print_r("alice si entro");
+          // print_r($page["content"]["system_main"]["nodes"][$node->nid]["facebookshare"]);
+          // print render($page["content"]["system_main"]["nodes"][$node->nid]["facebookshare"]["#markup"]);
+          print render($page['content']);
+          // print_r('alice ---');
+          // print_r($page['content']['service_links_service_links']['#children']);
+            
+          // print_r ($page["content"]["service_links_service_links"]);
+          print ($page['content']['service_links_service_links']['#markup']);
+          print_r('monreal ---');
+        }else{
+          print render($page['content']);
+        }
+
+
+
+      ?>
       <?php print $feed_icons; ?>
 
     </div></div> <!-- /.section, /#content -->
@@ -232,7 +350,7 @@
 
   </div></div> <!-- /#main, /#main-wrapper -->
 
-  <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>   
+  <?php if ($page['triptych_first'] || $page['triptych_middle'] || $page['triptych_last']): ?>
 
     <div id="triptych-wrapper"><div id="triptych" class="clearfix">
       <?php print render($page['triptych_first']); ?>
