@@ -23,7 +23,6 @@
       }
 
       $('a.service-links-facebook-share', context).once(function(){
-        console.debug('alice here!', Drupal.settings.ws_fs.css);
         var f_text = document.createElement('fb:share-button');
         var css = Drupal.settings.ws_fs.css.split(';');
         var key_value = new Array();

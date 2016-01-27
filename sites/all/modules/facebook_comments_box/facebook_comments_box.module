@@ -93,7 +93,7 @@ function facebook_comments_box_block_view($delta = '') {
         // Set the content of the block.
         $fcb_content = '<div class="facebook-comments-box">';
         $fcb_content .= '<div id="fb-root"></div>';
-        $fcb_content .= '<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>';
+        $fcb_content .= '<script src="http://connect.facebook.net/es_ES/all.js#xfbml=1"></script>';
         $fcb_content .= '<fb:comments href="' . $fcb_url . '" ';
         $fcb_content .= ' num_posts="' . check_plain(variable_get('facebook_comments_box_default_comments', 10)) . '" ';
         $fcb_content .= ' width="' . check_plain(variable_get('facebook_comments_box_default_width', 400)) . '" ';
