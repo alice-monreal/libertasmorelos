@@ -228,7 +228,6 @@
         }
 
         $node = node_load($nid);
-
         // if ($node) {
         //   // print "Node: $node->nid with title $node->title";
         // } else {
@@ -236,69 +235,115 @@
         // }
 
         $content = $page["content"]["system_main"]["nodes"][$node->nid];
-        $content_type = $page["content"]["system_main"]["nodes"][$node->nid]["#bundle"];
+        $content_type = $content["#bundle"];
 
-        // Cover Image
+        // Global base url
         Global $base_url;
-        $cover_image =$content["body"]["#object"]->field_image_cover["und"][0]["filename"];
-        $cover = $base_url.'/sites/default/files/'.$cover_image;
-
-
-        // Cover Title
-        $cover_title = $content["body"]["#object"]->field_title["und"][0]["value"];
-        // Cover Description
-        $cover_description = $content["body"]["#object"]->field_description["und"][0]["value"];
-
-        // Title
-        $title = $content["body"]["#object"]->title;
-        // Author
-        $author = $content["body"]["#object"]->field_author["und"][0]["value"];
-        // Date (de la publicación)
-        $post_date = $content["body"]["#object"]->field_date["und"][0]["value"];
-        // Profile image 
-        $profile = $content["body"]["#object"]->field_image_profile["und"][0]["filename"];
-
-        // Body
-        $body = $content["body"]["#object"]->body["und"][0]["value"];
-
-        // Images gallery
-        $images_gallery = array();
-        for($ig = 0; $ig < 10; $ig++){
-          $ig_n = $ig+1;
-          $ig_num = 'field_image_gallery_'.$ig_n;
-          $ig_image_array = $content["body"]["#object"]->$ig_num;
-          
-          if(!empty($ig_image_array)){
-            $ig_image_name = $ig_image_array['und'][0]['filename'];
-            $ig_image = '"'.$base_url.'/sites/default/files/'.$ig_image_name.'"';
-            array_push($images_gallery, $ig_image);
-          }
-        }
-
-        $ig_slider = "<div class='article_igallery_slider'>";
-
-        for($igs = 0; $igs < sizeof($images_gallery); $igs++){
-            $ig_slider .= "
-            <a class='fancybox-button' rel='fancybox-button' href=".$images_gallery[$igs]." title=''>
-                <div class='article_igallery_slide' style='background-image: url(".$images_gallery[$igs].")'>
-                </div>
-            </a>
-            ";
-        }
-
-        $ig_slider .= "</div>";
-
-        $redes_sociales = $page['content']['service_links_service_links']['#children'];
 
         if($content_type == "articulo"){
-        ?>
 
-          <div class="article_cover_container" style="background-image: url('<?php print $cover?>');">
-            <div class="article_cover_content">
-              <p class="article_cover_title"> <?php print $cover_title ?> </p>
-              <p class="article_cover_description"> <?php print $cover_description ?>  </p>
+          // Cover Image
+          $cover_image = $content["body"]["#object"]->field_image_cover["und"][0]["filename"];
+          $cover = $base_url.'/sites/default/files/'.$cover_image;
+
+          // Cover Title
+          $cover_title = $content["body"]["#object"]->field_title["und"][0]["value"];
+          // Cover Description
+          $cover_description = $content["body"]["#object"]->field_description["und"][0]["value"];
+
+          // Title
+          $title = $content["body"]["#object"]->title;
+          // Author
+          $author = $content["body"]["#object"]->field_author["und"][0]["value"];
+          // Date (de la publicación)
+          $post_date = $content["body"]["#object"]->field_date["und"][0]["value"];
+          // Profile image 
+          $profile = $content["body"]["#object"]->field_image_profile["und"][0]["filename"];
+
+          // Body
+          $body = $content["body"]["#object"]->body["und"][0]["value"];
+
+          // Social Networks
+          $redes_sociales = $page['content']['service_links_service_links']['#children'];
+
+          // Date Format
+          $days = array(
+                'Mon' => 'Lunes',
+                'Tue' => 'Martes',
+                'Wed' => 'Mi&eacute;rcoles',
+                'Thu' => 'Jueves',
+                'Fri' => 'Viernes',
+                'Sat' => 'S&aacute;bado',  
+                'Sun' => 'Domingo' );
+              
+          $months = array(
+            '01' => 'Enero',      '02' => 'Febrero',
+            '03' => 'Marzo',      '04' => 'Abril',
+            '05' => 'Mayo',       '06' => 'Junio',
+            '07' => 'Julio',      '08' => 'Agosto',
+            '09' => 'Septiembre', '10' => 'Octubre',
+            '11' => 'Noviembre',  '12' => 'Diciembre' );
+
+          $date = $post_date;
+          for($i=0; $i<2; $i++){
+            $day   = substr($date, 0, 2);
+            $month = substr($date, 3, 2);
+            $year  = substr($date, 6, 4);
+            if($i === 0){
+              $dateformat = $month.'/'.$day.'/'.$year;
+              $time = strtotime($dateformat);
+              $date = date('d-m-Y-D', $time);
+            }else{
+              $nday  = substr($date, 11, 3);
+              $dateformat = $days[$nday].' '.$day.' de '.$months[$month].' de '.$year;
+            }                
+          }
+
+          // Images gallery
+          $images_gallery = array();
+          for($ig = 0; $ig < 10; $ig++){
+            $ig_n = $ig+1;
+            $ig_num = 'field_image_gallery_'.$ig_n;
+            $ig_image_array = $content["body"]["#object"]->$ig_num;
+            
+            if(!empty($ig_image_array)){
+              $ig_image_name = $ig_image_array['und'][0]['filename'];
+              $ig_image = '"'.$base_url.'/sites/default/files/'.$ig_image_name.'"';
+              array_push($images_gallery, $ig_image);
+            }
+          }
+
+          $ig_slider = "<div class='article_igallery_slider'>";
+
+          for($igs = 0; $igs < sizeof($images_gallery); $igs++){
+              $ig_slider .= "
+              <a class='fancybox-button' rel='fancybox-button' href=".$images_gallery[$igs]." title=''>
+                  <div class='article_igallery_slide' style='background-image: url(".$images_gallery[$igs].")'>
+                  </div>
+              </a>
+              ";
+          }
+
+          $ig_slider .= "</div>";
+      ?>
+
+          <style>
+            .section{
+              width: 750px;
+              /* margin: 0 auto;
+              padding: 0; */
+            }
+          </style>
+          <a class='fancybox-button' rel='fancybox-button' href="<?php print $cover?>" title=''>
+            <div class="article_cover_container" style="background-image: url('<?php print $cover?>');">
+              <div class="article_cover_content">
+                <div class="article_wrapper">
+                  <p class="article_cover_title"> <?php print $cover_title ?> </p>
+                  <p class="article_cover_description"> <?php print $cover_description ?>  </p>
+                </div>
+              </div>
             </div>
-          </div>
+          </a>
 
           <div class="article_social_buttons"> 
               <?php print ($page['content']['service_links_service_links']['#markup']); ?>
@@ -308,41 +353,6 @@
             <div class="article_adds">
               <p> Publicidad </p>
             </div>
-
-            <?php
-
-              $days = array(
-                'Mon' => 'Lunes',
-                'Tue' => 'Martes',
-                'Wed' => 'Mi&eacute;rcoles',
-                'Thu' => 'Jueves',
-                'Fri' => 'Viernes',
-                'Sat' => 'S&aacute;bado',  
-                'Sun' => 'Domingo' );
-              
-              $months = array(
-                '01' => 'Enero',      '02' => 'Febrero',
-                '03' => 'Marzo',      '04' => 'Abril',
-                '05' => 'Mayo',       '06' => 'Junio',
-                '07' => 'Julio',      '08' => 'Agosto',
-                '09' => 'Septiembre', '10' => 'Octubre',
-                '11' => 'Noviembre',  '12' => 'Diciembre' );
-
-              $date = $post_date;
-              for($i=0; $i<2; $i++){
-                $day   = substr($date, 0, 2);
-                $month = substr($date, 3, 2);
-                $year  = substr($date, 6, 4);
-                if($i === 0){
-                  $dateformat = $month.'/'.$day.'/'.$year;
-                  $time = strtotime($dateformat);
-                  $date = date('d-m-Y-D', $time);
-                }else{
-                  $nday  = substr($date, 11, 3);
-                  $dateformat = $days[$nday].' '.$day.' de '.$months[$month].' de '.$year;
-                }                
-              }
-            ?>
             <p class="ac_title"> <?php print $title; ?> </p>
             <p class="ac_author_date"> <?php print $author ?>, <?php print $dateformat; ?> </p>
             <p class="ac_body"> <?php print $body ?> </p>
@@ -365,17 +375,149 @@
             <?php print ($page['content']['facebook_comments_block_fb_comments']['#markup']); ?>
           </div>
 
-        <?php
+      <?php
           // print_r ($page['content']);
         }
-        elseif($content_type == "page"){}
+        elseif($content_type == "opinion"){
+          
+          // Cover Image
+          $cover_image = $content["#node"]->field_opinion_cover["und"][0]["filename"];
+          $cover = $base_url.'/sites/default/files/'.$cover_image;
 
+          // Cover Title
+          $cover_title = $content["#node"]->title;
+          // Cover Description
+          $cover_description = $content["#node"]->field_opinion_summary["und"][0]["value"];
+
+          // Title
+          $title = $content["#node"]->title;
+          // Author
+          $author = $content["#node"]->field_opinion_author["und"][0]["value"];
+          // Date (de la publicación)
+          $post_date =  $content["#node"]->field_opinion_date["und"][0]["value"];
+          // Profile image 
+          $profile =  $content["#node"]->field_opinion_profile["und"][0]["filename"];
+
+          // Body
+          $body = $content["#node"]->body["und"][0]["value"];
+
+          // Tags
+          // $tags = $content["#node"]->field_opinion_tags["und"][0]["value"]
+
+          // Social Networks
+          // $redes_sociales = $page['content']['service_links_service_links']['#children'];
+          // print_r($redes_sociales);
+
+          // Date Format
+          $days = array(
+                'Mon' => 'Lunes',
+                'Tue' => 'Martes',
+                'Wed' => 'Mi&eacute;rcoles',
+                'Thu' => 'Jueves',
+                'Fri' => 'Viernes',
+                'Sat' => 'S&aacute;bado',  
+                'Sun' => 'Domingo' );
+              
+          $months = array(
+            '01' => 'Enero',      '02' => 'Febrero',
+            '03' => 'Marzo',      '04' => 'Abril',
+            '05' => 'Mayo',       '06' => 'Junio',
+            '07' => 'Julio',      '08' => 'Agosto',
+            '09' => 'Septiembre', '10' => 'Octubre',
+            '11' => 'Noviembre',  '12' => 'Diciembre' );
+
+          $date = $post_date;
+          for($i=0; $i<2; $i++){
+            $day   = substr($date, 0, 2);
+            $month = substr($date, 3, 2);
+            $year  = substr($date, 6, 4);
+            if($i === 0){
+              $dateformat = $month.'/'.$day.'/'.$year;
+              $time = strtotime($dateformat);
+              $date = date('d-m-Y-D', $time);
+            }else{
+              $nday  = substr($date, 11, 3);
+              $dateformat = $days[$nday].' '.$day.' de '.$months[$month].' de '.$year;
+            }                
+          }
+
+          // Images gallery
+          // $images_gallery = array();
+          // for($ig = 0; $ig < 10; $ig++){
+          //   $ig_n = $ig+1;
+          //   $ig_num = 'field_image_gallery_'.$ig_n;
+          //   $ig_image_array = $content["body"]["#object"]->$ig_num;
+            
+          //   if(!empty($ig_image_array)){
+          //     $ig_image_name = $ig_image_array['und'][0]['filename'];
+          //     $ig_image = '"'.$base_url.'/sites/default/files/'.$ig_image_name.'"';
+          //     array_push($images_gallery, $ig_image);
+          //   }
+          // }
+
+          // $ig_slider = "<div class='article_igallery_slider'>";
+
+          // for($igs = 0; $igs < sizeof($images_gallery); $igs++){
+          //     $ig_slider .= "
+          //     <a class='fancybox-button' rel='fancybox-button' href=".$images_gallery[$igs]." title=''>
+          //         <div class='article_igallery_slide' style='background-image: url(".$images_gallery[$igs].")'>
+          //         </div>
+          //     </a>
+          //     ";
+          // }
+
+          // $ig_slider .= "</div>";
+
+          // print_r ($page['content']);
+          // print_r ($body);
+      ?>
+          <a class='fancybox-button' rel='fancybox-button' href="<?php print $cover?>" title=''>
+            <div class="article_cover_container" style="background-image: url('<?php print $cover?>');">
+              <div class="article_cover_content">
+                <div class="article_wrapper">
+                  <p class="article_cover_title"> <?php print $cover_title ?> </p>
+                  <p class="article_cover_description"> <?php print $cover_description ?>  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="article_social_buttons"> 
+              <?php print ($page['content']['service_links_service_links']['#markup']); ?>
+          </div>
+
+          <div class="article_container">
+            <div class="article_adds">
+              <p> Publicidad </p>
+            </div>
+            <p class="ac_title"> <?php print $title; ?> </p>
+            <p class="ac_author_date"> <?php print $author ?>, <?php print $dateformat; ?> </p>
+            <p class="ac_body"> <?php print $body ?> </p>
+          </div>          
+
+          <div class="article_images_gallery">
+            <p> Galer&iacute;a de im&aacute;genes </p>
+            <?php print $ig_slider; ?>
+          </div>
+
+          <div class="article_releated_notes">
+            <p> Visita m&aacute;s noticias </p>
+
+            <p class="enlaces"> Enlace 1 </p>
+            <p class="enlaces"> Enlace 2 </p>
+          </div>
+
+          <div class="article_comments">
+            <p> Comentarios </p>
+            <?php print ($page['content']['facebook_comments_block_fb_comments']['#markup']); ?>
+          </div>
+
+      <?php
+        }
         else{
           print render($page['content']);
-           print_r ($page['content']);
+          // print_r ($page['content']);
         }
-
-
 
       ?>
       <?php print $feed_icons; ?>

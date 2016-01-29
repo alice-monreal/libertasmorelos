@@ -500,6 +500,8 @@ function hook_node_revision_delete($node) {
  * @ingroup node_api_hooks
  */
 function hook_node_insert($node) {
+  print_r('alice');
+  exit;
   db_insert('mytable')
     ->fields(array(
       'nid' => $node->nid,

@@ -1,7 +1,7 @@
 #content.column{
 	width: 100%;
 	.section{
-		width: 750px;
+		/*width: 750px;*/
 	    margin: 0 auto;
 	    padding: 0;
 	}
@@ -15,47 +15,52 @@
 	background-size: cover;
 	background-position: center;
 	background-color: #ccc;
-
+	background-repeat: no-repeat;
 	.article_cover_content{
-		position: absolute;
+		position: relative;
 	    width: 100%;
-	    height: 70%;
-	    bottom: 0;
+	    height: 100%;
 		background-repeat: repeat-x;
 	    background-size: auto 100%;
 	    background-image: url('../../images/menu-mask-slide-2.png');
-	    overflow: hidden;		
-		.article_cover_title{
-			display: block;
-			position: relative;
-			width: auto;
-			height: auto;
-		    max-width: 655px;
-		    max-height: 130px;
-			margin: 0 0 0 45px;
-			padding: 0;
-			font-family: Lato, Helvetica, sans-serif;
-			font-size: 42px;
-			font-weight: 200;
-			font-style: italic;
-			color: #fff;
-			text-shadow: 2px 2px 2px #353333;
-		}
-		.article_cover_description{
-			display: block;
-			position: relative;
-			width: auto;
-			height: auto;
-			max-width: 380px;
-		    max-height: 84px;
-		    margin: 16px 0 0 80px;
-			/*margin: 20px 0 0 65px;*/
-			font-family: Lato, Helvetica, sans-serif;
-			font-size: 14px;
-			font-weight: 200;
-			font-style: italic;
-			color: #fff;
-			text-shadow: 2px 2px 2px #353333;
+	    overflow: hidden;
+	    .article_wrapper{
+    	    position: absolute;
+    		max-height: 250px;  
+    		bottom: 70px; 				
+			.article_cover_title{
+				display: block;
+				position: relative;
+				width: auto;
+				height: auto;
+			    max-width: 625px;
+			    max-height: 115px;
+				margin: 0 0 0 45px;
+				padding: 0;
+				font-family: robotoItalic, Helvetica, sans-serif;
+				font-size: 42px;
+				/*font-weight: 200;
+				font-style: italic;*/
+				color: #fff;
+				text-shadow: 2px 2px 2px #000;
+				/*border: solid 1px;*/
+			}
+			.article_cover_description{
+				display: block;
+				position: relative;
+				width: auto;
+				height: auto;
+				max-width: 525px;
+			    max-height: 95px;
+			    margin: 20px 0 0 65px;
+				font-family: robotoItalic, Helvetica, sans-serif;
+				font-size: 16px;
+				/*font-weight: 200;
+				font-style: italic;*/
+				color: #fff;
+				text-shadow: 2px 2px 2px #000;
+				/*border: solid 1px;*/
+			}
 		}
 	}
 }
@@ -65,8 +70,8 @@
 	position: relative;
 	clear: both;
 	width: 100%;
-	min-height: 30px;
-	margin: 25px 0 0; 
+	min-height: 35px;
+	margin: 15px 0 0; 
 	background-color: #fff;
 	p {
 		font-family: Lato, Helvetica, sans-serif;
@@ -82,7 +87,7 @@
 	clear: both;
 	width: 100%;
 	min-height: 50px;
-	margin: 0; 
+	margin: 5px 0 0; 
 	background-color: #ececeb;
 	p {
 	    display: block;
@@ -221,11 +226,12 @@
 
 .article_social_buttons .item-list ul li{
 	float: right;
+	margin: 0;
 	&.first{
-		padding: 10px 0 10px 10px;
+		padding: 10px 0 0 10px;
 	}
 	&.last{
-		padding: 7px 10px;
+		padding: 7px 10px 0 0;
 	}
 }
 

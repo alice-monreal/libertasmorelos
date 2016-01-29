@@ -184,6 +184,9 @@
 #block-recent-articles-slider-articles{
 	width: 960px;
 }
+.recent_slider{
+	display: none;
+}
 .recent_slider, .recent_slide, .recent_slide_background{
 	width: 900px;
 	height: 330px;
@@ -192,43 +195,52 @@
 
 .recent_slide_background{
 	position: relative;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-color: #c5c5c5;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .recent_slide_info{
-    position: absolute;
+    position: relative;
     width: 100%;
 	height: 100%;
-    bottom: 0;
-	background-image: url('../../images/menu-mask-slide_2.png');
+	background-image: url('../../images/menu-mask-slide-2.png');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    overflow: hidden;
 	p{		
 		display: block;
 		position: relative;
 		width: auto;
 		height: auto;
-		max-width: 405px;
 		font-family: robotoItalic, Helvetica, sans-serif;
-		font-style: italic;
-		color: #f4f4f4;	
-    	text-shadow: 2px 2px 7px #000000;
-    	/*border: solid 1px red;*/
+		color: #f4f4f4;
+    	text-shadow: 2px 2px 7px #000;
+    	/*border: solid 1px;*/
+    	&.slide_title{
+			max-width: 725px;
+		    max-height: 110px;		    
+		    margin: 0 0 0 80px;
+		    font-size: 42px;
+		}
+    	&.slide_description{
+		    max-width: 625px;
+		    max-height: 70px;
+		    margin: 20px 0 0 105px;
+		    font-size: 16px;
+		}
+	}
+	.recent_slide_wrapper{
+		position: absolute;
+	    max-height: 205px;
+	    bottom: 85px;
 	}
 }
 
-.slide_title{
-    max-height: 105px;
-    margin: 115px 0 0 80px;
-	font-size: 35px;
-}
 
-.slide_description{
-    max-height: 66px;
-    margin: 20px 0 0 80px;
-	font-size: 15px;
-}
+
+
 
 /* Sección Poderes */
 
@@ -237,52 +249,50 @@
 	position: relative;
 	width: 860px;
     height: 225px;
-    margin: 0 auto;    
-    /*border: solid;*/
-
+    margin: 0 auto;
 	.poderes_title{
 		display: block;
 		position: relative;
-		width: 380px;
+		width: 375px;
 	    height: 40px;
 	    margin: 0 auto;
 	    padding: 0;
 	    background-color: #00694c;	    
-	    text-align: center;	    
+	    text-align: center;
+	    p{
+	    	padding: 2px;
+	    }	    
 	}
-
 	p{
 		display: block;
 		position: relative;
-	    font-family: Roboto, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
 	    font-weight: 200;
 	    color: #fff;
 	}
-
 	.poderes_container{
 		display: block;
 		position: relative;
-		width: auto;
-	    height: 160px;
+		width: 100%;
+	    height: 155px;
 	    margin: 25px 0 0;
 	    bottom: 0;	    	    
 	    background-color: #e5e1e1;	    
 	    overflow: hidden;
-	    /*border: solid 1px red;*/
 		.poderes_content{
 			display: block;
 			position: relative;
 			float: left;
     		width: 265px;
-    		max-height: 145px;
-    		margin: 15px 10px 0;
+    		max-height: 141px;
+    		margin: 5px 10px 0;
     		cursor: pointer;
 			.poderes_content_title{
 				display: block;
 				position: relative;    
-			    margin: 0 0 7px;
-			    font-family: Lato, Helvetica, sans-serif;    
+			    margin: 0 0 8px;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;    
 			    font-size: 22px;
 			    text-align: center;
 			    text-transform: capitalize;
@@ -293,15 +303,16 @@
 				position: relative;				
 			    float: left;
 				width: 125px;
-			    height: 95px;
+			    height: 100px;
 			    margin: 0 12px 0 0;
 			}
 			.poderes_content_description{
 				display: block;
 				position: relative;				
 			    float: left;
-			    width: 125px;			    
-			    font-family: Lato;
+			    max-width: 125px;
+    			max-height: 90px;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 13px;
 			    color: #353333;
 			    /*border: solid 1px blue;*/
@@ -424,7 +435,7 @@
 	float: left;
     width: 410px;
     height: 470px;
-    margin: 35px auto 0;
+    margin: 35px 0 0 68px;
     /*background-color: gray;  */
     /*border: solid;*/
 
@@ -432,7 +443,7 @@
 		display: block;
 		position: relative;
 		width: 380px;
-	    height: 40px;
+	    height: auto;
 	    margin: 0 auto;
 	    padding: 0;
 	    /*background-color: #00694c;	    */
@@ -451,8 +462,8 @@
 	.destacados_container{
 		display: block;
 		position: relative;
-		width: 410px;
-	    height: 410px;
+		width: 406px;
+	    height: 401px;
 	    margin: 20px 0 0;
 	    bottom: 0;	    	    
 	    background-color: #e5e1e1;	    
@@ -464,13 +475,13 @@
 			float: left;
     		width: auto;
     		max-height: none;
-    		margin: 15px 10px 0;
+    		margin: 13px 10px 0;
     		cursor: pointer;
 			.destacados_content_title{
 				display: block;
 				position: relative;    
-			    margin: 0 0 7px 20px;
-			    font-family: Lato, Helvetica, sans-serif;    
+			    margin: 0 0 10px 20px;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;    
 			    font-size: 16px;
 			    text-align: left;
 			    text-transform: capitalize;
@@ -481,7 +492,7 @@
 				position: relative;				
 			    float: left;
 				width: 130px;
-			    height: 75px;
+			    height: 73px;
 			    margin: 0 8px 0 20px;
 			}
 			.destacados_content_description{
@@ -490,7 +501,7 @@
 			    float: left;
 			    width: 225px;
 			    height: 75px;			    
-			    font-family: Lato;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 14px;
 			    color: #353333;
 			    /*border: solid 1px blue;*/
@@ -513,10 +524,10 @@
 	display: block;
     position: relative;
     float: right;
-    width: 400px;
-    height: 320px; 
-    margin: 112px 0 0 30px;
-    padding: 30px 0;
+    width: 331px;
+    height: 331px; 
+    margin: 115px 68px 0 0;
+    /*padding: 30px 0;*/
     background-color: #ecebeb;
     text-align: center;
     .publicidad_vertical_text{
