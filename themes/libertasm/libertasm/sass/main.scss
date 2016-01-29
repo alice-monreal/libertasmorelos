@@ -238,10 +238,6 @@
 	}
 }
 
-
-
-
-
 /* Sección Poderes */
 
 .poderes_section{
@@ -260,6 +256,7 @@
 	    background-color: #00694c;	    
 	    text-align: center;
 	    p{
+    		margin: 0;
 	    	padding: 2px;
 	    }	    
 	}
@@ -268,7 +265,6 @@
 		position: relative;
 	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #fff;
 	}
 	.poderes_container{
@@ -315,7 +311,6 @@
 			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 13px;
 			    color: #353333;
-			    /*border: solid 1px blue;*/
 			}
 		}
 	}
@@ -327,39 +322,46 @@
 	width: 960px;
 }
 
+.regiones_slider{
+	display: none;
+}
+
 .regiones_section{
 	display: block;
 	position: relative;
 	width: 860px;
     height: 225px;
-    margin: 30px auto 0;   
+    margin: 20px auto 0;   
     /*border: solid;*/
 
 	.regiones_title{
 		display: block;
 		position: relative;
-		width: 380px;
+		width: 275px;
 	    height: 40px;
 	    margin: 0 auto;
 	    padding: 0;
 	    background-color: #00694c;	    
-	    text-align: center;	    
+	    text-align: center;
+	    p{
+    		margin: 0;
+    		padding: 2px;
+	    }	    
 	}
 	p{
 		display: block;
 		position: relative;
-	    font-family: Roboto, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #fff;
 	}
 
 	.regiones_container{
 		display: block;
 		position: relative;
-		width: auto;
+		width: 100%;
 	    height: 160px;
-	    margin: 25px 0 0;
+	    margin: 40px 0 0;
 	    bottom: 0;	    	    
 	    /*background-color: #e5e1e1;	    */
 	    /*overflow: hidden;*/
@@ -368,37 +370,42 @@
 			display: block;
 			position: relative;
 			float: left;
-    		width: auto;
-    		max-height: auto;
-    		margin: 15px 10px 0;
+    		width: 215px;
+    		max-height: 155px;
+    		margin: 0;
+    		padding: 0 10px;
     		cursor: pointer;
+    		overflow: hidden;
 			.regiones_content_title{
 				display: block;
 				position: relative;    
-			    margin: 0 0 7px;
-			    font-family: Lato, Helvetica, sans-serif;    
+			    margin: 5px 0 6px;
+			    max-width: 212px;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;    
 			    font-size: 22px;
 			    text-align: center;
 			    text-transform: capitalize;
 			    color: #353333;
+			    overflow: hidden;
 			}
 			.regiones_content_image{
 				display: block;
 				position: relative;				
 			    float: left;
-				width: 115px;
-			    height: 85px;
+				width: 125px;
+			    height: 100px;
 			    margin: 0 12px 0 0;
 			}
 			.regiones_content_description{
 				display: block;
 				position: relative;				
 			    float: left;
-			    width: 85px;			    
-			    font-family: Lato;
+			    width: 75px;
+    			max-height: 95px;		    
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 13px;
 			    color: #353333;
-			    /*border: solid 1px blue;*/
+			    overflow: hidden;
 			}
 		}
 	}
@@ -418,7 +425,7 @@
 	.regiones_slide{
 	    position: relative;
 	    width: 235px;
-	    height: 150px;
+	    height: 155px;
 	    background-color: #e5e1e1;
 	}
 	.slick-next{		
@@ -434,8 +441,8 @@
 	position: relative;
 	float: left;
     width: 410px;
-    height: 470px;
-    margin: 35px 0 0 68px;
+    height: 450px;
+    margin: 40px 0 0 68px;
     /*background-color: gray;  */
     /*border: solid;*/
 
@@ -453,7 +460,7 @@
 		display: block;
 		position: relative;
 		margin: 0;
-	    font-family: Roboto, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
 	    font-weight: 200;
 	    color: #353333;
@@ -462,25 +469,25 @@
 	.destacados_container{
 		display: block;
 		position: relative;
-		width: 406px;
-	    height: 401px;
-	    margin: 20px 0 0;
-	    bottom: 0;	    	    
+		width: 410px;
+	    height: 398px;
+	    margin: 10px 0 0;
 	    background-color: #e5e1e1;	    
-	    /*overflow: hidden;*/
+	    overflow: hidden;
 	    /*border: solid 1px red;*/
 		.destacados_content{
 			display: block;
 			position: relative;
 			float: left;
     		width: auto;
-    		max-height: none;
+    		max-height: 120px;
     		margin: 13px 10px 0;
     		cursor: pointer;
+    		overflow: hidden;
 			.destacados_content_title{
 				display: block;
 				position: relative;    
-			    margin: 0 0 10px 20px;
+			    margin: 0 0 10px 10px;
 			    font-family: robotoCondesedRegular, Helvetica, sans-serif;    
 			    font-size: 16px;
 			    text-align: left;
@@ -492,18 +499,19 @@
 				position: relative;				
 			    float: left;
 				width: 130px;
-			    height: 73px;
-			    margin: 0 8px 0 20px;
+			    height: 75px;
+			    margin: 0 10px;
 			}
 			.destacados_content_description{
 				display: block;
 				position: relative;				
 			    float: left;
-			    width: 225px;
+			    width: 240px;
 			    height: 75px;			    
 			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 14px;
 			    color: #353333;
+			    overflow: hidden;
 			    /*border: solid 1px blue;*/
 			}
 			.destacados_content_separator{
@@ -809,11 +817,10 @@
     	margin: 0 auto;
     	.opiniones_section{
     		.opiniones_title{
-    			p{    				
+    			p{			
 				    margin: 0;
-    				font-family: Roboto, Helvetica, sans-serif;
+    				font-family: robotoCondesedRegular, Helvetica, sans-serif;
 				    font-size: 24px;
-				    font-weight: 200;
 				    color: #353333;
 				    text-align: center;
     			}
@@ -825,7 +832,7 @@
     					color: #353333;    				
 	    				.opiniones_fix_section{
 						    min-height: 110px;
-						    margin: 20px auto;
+						    margin: 12px auto 20px;
 	    					background-color: #ecebeb;
 	    					img.opiniones_fix_image{
 	    						display: block;
@@ -833,25 +840,29 @@
 							    float: left;
 							    width: 70px;
 							    height: 70px;
-							    margin: 20px 0 0 20px;
+							    margin: 20px 30px 20px 20px;
 	    					}
 	    					.opiniones_fix_info{
 	    						display: block;
 							    position: relative;
 							    float: left;
-							    margin: 20px 20px 0;
-							    max-width: 790px;
-							    max-height: 85px;
-							    /*border: solid;*/
+							    margin: 20px 0 25px;
+							    width: 640px;
+							    height: 65px;
+							    overflow: hidden;
 							    .opiniones_fix_title{
-							    	font-family: Lato, Helvetica, sans-serif;
+								    margin: -5px 0 0;
+							    	font-family: robotoCondesedRegular, Helvetica, sans-serif;
 								    font-size: 18px;
-								    font-weight: normal;
 							    }
 							    .opiniones_fix_description{
-							    	font-family: Lato, Helvetica, sans-serif;
+								    position: absolute;
+								    max-height: 40px;
+							    	margin: 0;
+								    bottom: 0;
+							    	font-family: robotoCondesedLight, Helvetica, sans-serif;
 								    font-size: 14px;
-								    font-weight: 300;
+								    overflow: hidden;
 							    }
 	    					}
 	    				}
@@ -867,11 +878,10 @@
 .opiniones_section{
 	display: block;
 	position: relative;
-	width: 860px;
-    height: 225px;
-    margin: 0 auto;   
-    /*border: solid;*/
-
+	width: 780px;
+    max-height: 645px;
+    margin: 0 auto;
+    /*overflow: hidden;*/
 	.opiniones_title{
 		display: block;
 		position: relative;
@@ -879,15 +889,14 @@
 	    height: 40px;
 	    margin: 0 auto;
 	    padding: 0;
-	    /*background-color: #00694c;	    */
 	    text-align: center;	    
 	}
 	p{
 		display: block;
 		position: relative;
-	    font-family: Roboto, Helvetica, sans-serif;
+		margin: 0;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #353333;
 	}
 
@@ -895,12 +904,9 @@
 		display: block;
 		position: relative;
 		width: auto;
-	    height: 160px;
-	    margin: 25px 0 0;
-	    bottom: 0;	    	    
-	    /*background-color: #e5e1e1;	    */
-	    /*overflow: hidden;*/
-	    /*border: solid 1px red;*/
+	    max-height: 645px;
+	    margin: 0;
+	    bottom: 0;
 		.opiniones_content{
 			display: block;
 			position: relative;
@@ -915,38 +921,23 @@
 			    float: left;
 				width: 60px;
 			    height: 60px;
-			    margin: 0 12px 0 0;
+			    margin: 0 10px 0 0;
 			}
-    		opiniones_content_info{
+    		.opiniones_content_info{
     			display: block;
     			position: relative;
     			float: left;
-    			.opiniones_content_title{
-					display: block;
-					position: relative;    
-				    margin: 0 0 7px;
-				    font-family: Lato, Helvetica, sans-serif;    
-				    font-size: 22px;
-				    text-align: center;
-				    text-transform: capitalize;
-				    color: #353333;
-				}
-				.opiniones_content_description{
-					display: block;
-					position: relative;				
-				    float: left;
-				    width: 85px;			    
-				    font-family: Lato;
-				    font-size: 13px;
-				    color: #353333;
-				    /*border: solid 1px blue;*/
+    			.opiniones_content_title{}
+				.opiniones_content_description{}
+				p{
+					overflow: hidden;
 				}
     		}
 		}
 	}
 }
 
-.opiniones_slider, .opiniones_slide{ /* , .opiniones_slide_background{ */
+.opiniones_slider{
 	width: 761px;
 	height: 201px;
 	margin: 30px auto;
@@ -960,27 +951,31 @@
 	.opiniones_slide{
 	    position: relative;
 	    width: 365px;
-	    height: 200px;
+	    height: 210px;
 	    margin: 0 15px;
 	    background-color: #e5e1e1;
 	    .opiniones_wrapper{
 	    	.opiniones_link{
 	    		text-decoration: none;
 	    		.opiniones_content{
-	    			clear: both;
 				    display: inline-block;
+				    clear: both;
 				    width: 90%;
-	    			margin: 25px 0 0 25px;
+	    			margin: 25px 15px 0 20px;
 	    			.opiniones_content_image{}
 	    			.opiniones_content_info{
 	    				float: left;
-						max-width: 245px;
-						max-height: 60px;
-						/*border: solid;*/
+						max-width: 255px;
+						max-height: 67px;
+						overflow: hidden;
 	    				.opiniones_content_title{
+    						margin: -7px 0 0;
+	    					height: 40px;
 	    					font-size: 15px;
 	    				}
 	    				.opiniones_content_description{
+	    					height: 30px;
+	    					font-family: robotoCondesedLight, Helvetica, sans-serif;
 	    					font-size: 13px;
 	    				}
 	    			}
@@ -1113,8 +1108,6 @@
 					position: relative;
 				    font-family: Lato, Helvetica, sans-serif;
 				    font-size: 13px;
-				    font-weight: lighter;
-
 				}
 				.footer_email{
 					display: block;

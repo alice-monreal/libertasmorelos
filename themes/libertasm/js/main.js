@@ -46,7 +46,8 @@ jQuery( document ).ready(function( $ ) {
 	});
 
   	setTimeout(function(){
-  		$('.recent_slider').css('display', 'block');
+  		$('.recent_slider').css('display', 'block');  		
+  		$('.regiones_slider').css('display', 'block');
   	}, 800);
 
   	// $(".fancybox").fancybox();
