@@ -22,13 +22,43 @@ function regiones_section_block_view($delta = '') {
     case 'articles':
     Global $base_url;
 
-    $regiones = array();
-    $regionesTitles = array(3 => "norte", 4 => "centro", 5 => "sur", 6 => "poniente");
-    // print_r("regionesTitles: ");
+    $rnames_query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, A.title FROM {node} A 
+      WHERE A.type = :type 
+      AND (A.title like 'Región%' OR A.title like 'Region%')
+      ORDER BY nid DESC";
+    $rnames = db_query($rnames_query, array(':type' => 'clasificacion_de_articulos'))->fetchAll();
+    // print_r('region names: ');
+    // print_r($rnames);
+
+    $regionesTotal = sizeof($rnames);
+
+    $regionesTitles = array();
+    foreach ($rnames as $rname) {
+
+      $rWords = explode(" ", $rname->title);
+      $rWTotal = sizeof($rWords);
+      
+      if($rWTotal > 1){
+        
+        $rTitle = '';
+        for($rw_i = 1; $rw_i <= $rWTotal; $rw_i++) {
+          $rTitle .= $rWords[$rw_i].' '; 
+        }
+
+        $rObj = array('id' => $rname->nid,
+                      'title' => $rTitle);
+        
+        array_push($regionesTitles, $rObj);
+      }
+    }
+    
     // print_r($regionesTitles);
-    for($i = 3; $i < 7; $i++){
+    $regiones = array();
+
+    for($i = 0; $i < $regionesTotal; $i++){
       $item = $i+1;
-      $query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, B.entity_id, B.field_type_value FROM {node} A INNER JOIN {field_data_field_type} B ON A.nid = B.entity_id WHERE A.type = :type AND B.field_type_value = ".$item." ORDER BY nid DESC LIMIT 1";
+      $query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, B.entity_id, B.field_type_value FROM {node} A INNER JOIN {field_data_field_type} B ON A.nid = B.entity_id 
+        WHERE A.type = :type AND B.field_type_value = ".$regionesTitles[$i]['id']." ORDER BY nid DESC LIMIT 1";
       $region = db_query($query, array(':type' => 'articulo'))->fetchAll();
 
       if(!empty($region)){
@@ -71,7 +101,7 @@ function regiones_section_block_view($delta = '') {
 
       $region[0]->description = $title; 
 
-      $region[0]->title = $regionesTitles[$i];
+      $region[0]->title = $regionesTitles[$i]['title'];
 
       array_push($regiones, $region);
     }
@@ -93,15 +123,13 @@ function regiones_section_block_view($delta = '') {
       $section .= "<div class='regiones_slider'>";
 
       foreach ($regiones as $region) {
-        // print_r("region");
-        // print_r($region);
         // Link: Redirect to HOME if the article validation is empty.
         $section .= "
           <a href='http://libertasmorelos.lo/node/".$region[0]->nid."'>
             <div class='regiones_slide'>
               <div class='regiones_content ".$region[0]->title."'> 
                 <p class='regiones_content_title'> ".$region[0]->title." </p>
-                <img class='regiones_content_image' src=".$region[0]->image_url." />
+                <div class='regiones_content_image' style='background-image: url(".$region[0]->image_url.");'> </div>
                 <p class='regiones_content_description'> ".$region[0]->description." </p>                
               </div>
             </div>

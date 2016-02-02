@@ -67,7 +67,7 @@ function opiniones_section_block_view($delta = '') {
 
       $image_url = '"'.$base_url.'/sites/default/files/'.$image_file.'"';
       $opinion[0]->image_name = $image_file;
-      $opinion[0]->image_url  = $image_url;
+      $opinion[0]->image_url  = $image_url; // str_replace(" ", "%20", $image_url);
 
       $opinion[0]->description = $title; 
 
@@ -91,12 +91,13 @@ function opiniones_section_block_view($delta = '') {
         </div>
         <div class='opiniones_container'>";
 
+      $fix_prof_image = '"'.'http://libertasmorelos.lo/sites/default/files/opinion_user.png'.'"';
       // Sección fija
       $section .= "
       <div class='opiniones_fix_container'>
         <a href='' class='opiniones_fix_link'>
           <div class='opiniones_fix_section'>
-            <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
+            <div class='opiniones_fix_image' style='background-image: url(".$fix_prof_image.");'> </div>
             <div class='opiniones_fix_info'>
               <p class='opiniones_fix_title'> Desde los Laureles por Teodoro Renter&iacute;a </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
@@ -105,7 +106,7 @@ function opiniones_section_block_view($delta = '') {
         </a>
         <a href='' class='opiniones_fix_link'>
           <div class='opiniones_fix_section'>
-            <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
+            <div class='opiniones_fix_image' style='background-image: url(".$fix_prof_image.");'> </div>
             <div class='opiniones_fix_info'>
               <p class='opiniones_fix_title'> La ley de Herodes por  </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
@@ -114,7 +115,7 @@ function opiniones_section_block_view($delta = '') {
         </a>
         <a href='' class='opiniones_fix_link'>
           <div class='opiniones_fix_section'>
-            <img src='http://libertasmorelos.lo/sites/default/files/opinion_user.png' class='opiniones_fix_image'/>
+            <div class='opiniones_fix_image' style='background-image: url(".$fix_prof_image.");'> </div>
             <div class='opiniones_fix_info'>
               <p class='opiniones_fix_title'> Contratiempo por </p>
               <p class='opiniones_fix_description'> This is the description. Leer m&aacute;s... </p>
@@ -133,8 +134,8 @@ function opiniones_section_block_view($delta = '') {
           <div class='opiniones_slide'>
             <div class='opiniones_wrapper'>
               <a class='opiniones_link' href='http://libertasmorelos.lo/node/".$opinion[0]->nid."'>
-                <div class='opiniones_content ".$opinion[0]->title."'> 
-                  <img class='opiniones_content_image' src=".$opinion[0]->image_url." />
+                <div class='opiniones_content ".$opinion[0]->title."'>
+                  <div class='opiniones_content_image' style='background-image: url(".$opinion[0]->image_url.");'> </div>
                   <div class='opiniones_content_info'>
                     <p class='opiniones_content_title'> ".$opinion[0]->title." </p>
                     <p class='opiniones_content_description'> ".$opinion[0]->description.". Leer m&aacute;s... </p>
@@ -143,7 +144,7 @@ function opiniones_section_block_view($delta = '') {
               </a>
               <a class='opiniones_link' href='http://libertasmorelos.lo/node/".$opinion[0]->nid."'>
                 <div class='opiniones_content ".$opinion[0]->title."'>
-                  <img class='opiniones_content_image' src=".$opinion[0]->image_url." />
+                  <div class='opiniones_content_image' style='background-image: url(".$opinion[0]->image_url.");'> </div>
                   <div class='opiniones_content_info'>
                     <p class='opiniones_content_title'> ".$opinion[0]->title." </p>
                     <p class='opiniones_content_description'> ".$opinion[0]->description.". Leer m&aacute;s... </p>

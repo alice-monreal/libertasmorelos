@@ -97,8 +97,8 @@ function miscelaneas_section_block_view($delta = '') {
         // Link: Redirect to HOME if the article validation is empty.
         $section .= "
           <a href='http://libertasmorelos.lo/node/".$miscelanea[0]->nid."'>
-            <div class='miscelaneas_content ".$miscelanea[0]->title."'> 
-              <img class='miscelaneas_content_image' src=".$miscelanea[0]->image_url." />
+            <div class='miscelaneas_content ".$miscelanea[0]->title."'>
+              <div class='miscelaneas_content_image' style='background-image: url(".$miscelanea[0]->image_url.");'> </div>
               <div class='miscelaneas_content_info'>
                 <p class='miscelaneas_content_title'> ".$miscelanea[0]->title." </p>              
                 <p class='miscelaneas_content_description'> ".$miscelanea[0]->description." </p>

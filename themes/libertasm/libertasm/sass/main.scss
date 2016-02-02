@@ -43,16 +43,14 @@
 	#site-name strong a span{		
     	margin: 0;
     	padding: 0;
-		font-family: Lato, Helvetica !important;	
-		font-weight: bold;
+		font-family: robotoCondesedRegular, Helvetica !important;
 		font-style: normal;
 		font-size: 54px;
 		color: #00694c !important;
 	}
 	#site-slogan{
 		margin: 18px 0 -15px;
-		font-family: Lato, Helvetica !important;	
-		font-weight: 400;
+		font-family: robotoCondesedRegular, Helvetica !important;
 	    font-style: normal;
 	    font-size: 16px;
 	    color: #666a69;
@@ -61,8 +59,7 @@
     	margin: -15px 0 18px;
 		padding: 0;
 		float: right;
-		font-family: Lato, Helvetica !important;	
-		font-weight: 400;
+		font-family: robotoCondesedRegular, Helvetica !important;
 	    font-style: normal;
 	    font-size: 19px;
 	    color: #666a69;
@@ -134,9 +131,8 @@
 			background-image: none;
 			border-radius: 0;
 			border: none;
-			font-family: Lato, Helvetica;
-			font-size: 20px;
-			font-weight: 200;		
+			font-family: robotoCondesedRegular, Helvetica;
+			font-size: 20px;		
 			text-shadow: none;
 			text-decoration: none;
 			color: #fff;
@@ -184,6 +180,7 @@
 #block-recent-articles-slider-articles{
 	width: 960px;
 }
+
 .recent_slider{
 	display: none;
 }
@@ -246,6 +243,7 @@
 	width: 860px;
     height: 225px;
     margin: 0 auto;
+    padding: 10px 0 0;
 	.poderes_title{
 		display: block;
 		position: relative;
@@ -301,6 +299,10 @@
 				width: 125px;
 			    height: 100px;
 			    margin: 0 12px 0 0;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    background-position: center;
+			    background-color: #747474;
 			}
 			.poderes_content_description{
 				display: block;
@@ -322,17 +324,12 @@
 	width: 960px;
 }
 
-.regiones_slider{
-	display: none;
-}
-
 .regiones_section{
 	display: block;
 	position: relative;
 	width: 860px;
     height: 225px;
-    margin: 20px auto 0;   
-    /*border: solid;*/
+    margin: 35px auto 0;
 
 	.regiones_title{
 		display: block;
@@ -362,10 +359,7 @@
 		width: 100%;
 	    height: 160px;
 	    margin: 40px 0 0;
-	    bottom: 0;	    	    
-	    /*background-color: #e5e1e1;	    */
-	    /*overflow: hidden;*/
-	    /*border: solid 1px red;*/
+	    bottom: 0;
 		.regiones_content{
 			display: block;
 			position: relative;
@@ -395,6 +389,10 @@
 				width: 125px;
 			    height: 100px;
 			    margin: 0 12px 0 0;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    background-position: center;
+			    background-color: #747474;
 			}
 			.regiones_content_description{
 				display: block;
@@ -411,16 +409,15 @@
 	}
 }
 
-.regiones_slider, .regiones_slide{ /* , .regiones_slide_background{ */
+.regiones_slider, .regiones_slide{
 	width: 860px;
 	height: 156px;
 	margin: 0 auto;
 }
-
 .regiones_slider{
+	display: none;
 	.slick-prev{
-		left: -25px;
-		margin: -15px 0 0;
+		left: -42px;
 	}
 	.regiones_slide{
 	    position: relative;
@@ -429,8 +426,7 @@
 	    background-color: #e5e1e1;
 	}
 	.slick-next{		
-		right: -25px;
-		margin: -15px 0 0;
+		right: -39px;
 	}
 }
 
@@ -443,9 +439,6 @@
     width: 410px;
     height: 450px;
     margin: 40px 0 0 68px;
-    /*background-color: gray;  */
-    /*border: solid;*/
-
 	.destacados_title{
 		display: block;
 		position: relative;
@@ -453,7 +446,6 @@
 	    height: auto;
 	    margin: 0 auto;
 	    padding: 0;
-	    /*background-color: #00694c;	    */
 	    text-align: center;	    
 	}
 	p{
@@ -462,7 +454,6 @@
 		margin: 0;
 	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #353333;
 	}
 
@@ -474,7 +465,6 @@
 	    margin: 10px 0 0;
 	    background-color: #e5e1e1;	    
 	    overflow: hidden;
-	    /*border: solid 1px red;*/
 		.destacados_content{
 			display: block;
 			position: relative;
@@ -501,6 +491,10 @@
 				width: 130px;
 			    height: 75px;
 			    margin: 0 10px;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    background-position: center;
+			    background-color: #747474;
 			}
 			.destacados_content_description{
 				display: block;
@@ -544,7 +538,7 @@
 	    width: 100%;
 	    margin: 125px 0 0;
 	    padding: 0;
-	    font-family: Lato, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 40px;
 	    color: #9f9f9f;
     }
@@ -557,10 +551,10 @@
     position: relative;
     clear: both;
     float: right;
-    width: 335px;
-    height: 320px; 
-    margin: 100px 30px 0;
-    padding: 30px 0;
+    width: 410px;
+    height: 450px; 
+    margin: 20px 60px 0 0;
+    padding: 0;
     background-color: #ecebeb;
     text-align: center;
     .twitter_text{
@@ -569,7 +563,7 @@
 	    width: 100%;
 	    margin: 125px 0 0;
 	    padding: 0;
-	    font-family: Lato, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 40px;
 	    color: #9f9f9f;
     }
@@ -578,18 +572,17 @@
 /* Publicidad Horizontal */
 #block-publicidad-horizontal-articles{
 	clear: both;
-    width: 930px;
-    padding: 70px 0 0;
-    /*border: solid;*/
+    width: 795px;
+    margin: 0 auto;
+    padding: 70px 0 25px;
 	.content{
 	    width: 925px;
 	    margin: 0 auto;
-    	/*border: solid red;*/
 		.publicidad_horizontal_container{
 			display: block;
 		    position: relative;
 		    clear: both;
-		    width: 100%;
+		    width: 795px;
 		    height: 115px;    
 		    margin: 0;
 		    padding: 0;
@@ -601,7 +594,7 @@
 			    width: 100%;
 			    margin: 0;
 			    padding: 30px 0 0;
-			    font-family: Lato, Helvetica, sans-serif;
+			    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 			    font-size: 40px;
 			    color: #9f9f9f;
 		    }
@@ -617,7 +610,7 @@
 	float: left;
     width: 410px;
     height: 450px;
-    margin: 70px 0 0;
+    margin: 20px 0 0 60px;
     background-color: #e5e1e1;
     /*border: solid;*/
 
@@ -626,7 +619,7 @@
 		position: relative;
 		width: 380px;
 	    height: 40px;
-	    margin: 20px auto;
+	    margin: 20px auto 22px;
 	    padding: 0;
 	    text-align: center;	    
 	}
@@ -634,9 +627,8 @@
 		display: block;
 		position: relative;
 		margin: 0;
-	    font-family: Roboto, Helvetica, sans-serif;
+	    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #353333;
 	}
 
@@ -645,54 +637,58 @@
 		position: relative;
 		width: 410px;
 	    height: 368px;
-	    margin: 5px 0 0;
+	    margin: 0;
 	    bottom: 0;	    	    
 	    background-color: #e5e1e1;
-	    /*border: solid 1px red;*/
 		.miscelaneas_content{
 			display: block;
 			position: relative;
 			float: left;
     		width: auto;
     		max-height: none;
-    		margin: 0 10px;
+    		margin: 0 40px 0 20px;
     		cursor: pointer;			
 			.miscelaneas_content_image{
 				display: block;
 				position: relative;				
 			    float: left;
 				width: 150px;
-    			height: 110px;
-			    margin: 0 0 0 15px;
+    			height: 115px;
+			    margin: 0;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    background-position: center;
+			    background-color: #747474;
 			}
 			.miscelaneas_content_info{
 				display: block;
 			    position: relative;
 			    float: right;
-			    width: 175px;	
-			    max-height: 110px;		    
-			    margin-left: 10px;
-			    /*border: solid 1px red;*/
+			    width: 190px;	
+			    max-height: 122px;		    
+			    margin: 0 0 0 10px;
 				.miscelaneas_content_title{
 					display: block;
 					position: relative;				    
-				    margin: 0 0 7px 10px;
-				    font-family: Lato, Helvetica, sans-serif;    
+				    margin: -5px 0 10px 10px;
+				    max-height: 50px;
+				    font-family: robotoCondesedRegular, Helvetica, sans-serif;    
 				    font-size: 16px;
-				    font-weight: bold;
 				    text-align: left;
 				    text-transform: capitalize;
 				    color: #353333;
+    				overflow: hidden;
 				}
 				.miscelaneas_content_description{
 					display: block;
 					position: relative;				
 				    float: left;
-				    width: 225px;
-				    font-family: Lato, Helvetica, sans-serif;
+				    width: 100%;
+				    max-height: 65px;
+				    font-family: robotoCondesedLight, Helvetica, sans-serif;
 				    font-size: 14px;
 				    color: #353333;
-				    /*border: solid 1px blue;*/
+				    overflow: hidden;
 				}
 			}
 		}		
@@ -700,8 +696,8 @@
 			clear: both;			    
 		    width: 60%;
 		    height: 0px;
-		    margin: 0 0 30px 135px;
-			padding: 30px 0 0;
+		    margin: 0 auto 31px;
+			padding: 11px;
 		    border-bottom: #bbbbbb solid 1px;
 		}
 		.miscelaneas_content_see_more{
@@ -709,10 +705,9 @@
 		    position: relative;
 		    clear: both;
 		    float: right;
-		    margin: -15px 45px 0 0;
-		    font-family: Lato, Helvetica, sans-serif;
+		    margin: -15px 25px 0 0;
+		    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 		    font-size: 16px;
-		    font-weight: bold;
     		text-decoration: none;		    
 		    color: #353333;
 		}
@@ -725,7 +720,7 @@
 	clear: both;
 	width: 930px;
     margin: 0 auto;
-    padding: 60px 0 0;
+    padding: 35px 0 0;
     .content{
     	width: 930px;
     }
@@ -733,17 +728,25 @@
 .deportes_title{
 	p{    				
 	    margin: 0 0 20px 0;
-		font-family: Roboto, Helvetica, sans-serif;
+		font-family: robotoCondesedRegular, Helvetica, sans-serif;
 	    font-size: 24px;
-	    font-weight: 200;
 	    color: #353333;
 	    text-align: center;
 	}
 }
 .deportes_slider, .deportes_slide, .deportes_slide_background{
-	width: 850px;
-	height: 330px;
+	width: 755px;
+	height: 270px;
 	margin: 0 auto;
+}
+.deportes_slider{
+	display: none;
+	.slick-prev{
+		left: -43px;
+	}
+	.slick-next{
+		right: -38px;
+	}
 }
 
 .deportes_slide_background{
@@ -754,54 +757,43 @@
 	background-color: #c5c5c5;
 }
 
-.deportes_slider{
-	.slick-prev{
-		left: -35px;
-	}
-	.slick-next{
-		right: -35px;
-	}
-}
-
 .deportes_slide_info{
     position: absolute;
     width: 100%;
-	height: 28%;	
+	height: 43%;	
     bottom: 0;
-    background-image: url("../../images/menu-mask.png");
+    background-image: url("../../images/menu-mask-slide-3.png");
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    overflow: hidden;
 	p{		
 		display: block;
 		position: relative;
 		width: auto;
 		height: auto;
 		max-width: none;
-		font-family: Roboto, Helvetica, sans-serif;
-		font-style: italic;
+		font-family: robotoItalic, Helvetica, sans-serif;
 		color: #f4f4f4;	
     	text-shadow: 2px 2px 7px #000000;
-    	/*border: solid 1px red;*/
+    	&.deportes_slide_title{
+			float: right;
+		    max-width: 94%;
+		    max-height: 50px;
+		   	margin: 0 6% 0 0;
+		    font-size: 32px;    
+		    text-align: right;
+		}
+
+		&.deportes_slide_description{
+			clear: both;
+		    max-width: 82%;
+		    max-height: 50px;
+		    margin: 10px 0 0 8%;
+		    padding: 0;	 
+		    font-size: 13px;
+		    text-align: left;
+		}
 	}
-}
-
-.deportes_slide_title{
-	float: right;
-	width: 100%;
-    max-width: 800px;
-    max-height: 50px;
-   	margin: -25px 50px 0 0;
-    font-size: 32px;    
-    text-align: right;
-}
-
-.deportes_slide_description{
-	clear: both;
-    width: 100%;
-    max-width: 850px;
-    max-height: 50px;
-    margin: 0;
-    padding: 0;	 
-    font-size: 13px;
-    text-align: center;
 }
 
 /* Opinion Section */
@@ -809,9 +801,9 @@
 #block-opiniones-section-articles{
 	clear: both;    
     width: 960px;
-    height: 695px;
+    height: 660px;
     margin: 0 auto;
-    padding: 70px 0 0;
+    padding: 35px 0 0;
     .content{
     	width: 930px;
     	margin: 0 auto;
@@ -834,13 +826,17 @@
 						    min-height: 110px;
 						    margin: 12px auto 20px;
 	    					background-color: #ecebeb;
-	    					img.opiniones_fix_image{
+	    					.opiniones_fix_image{
 	    						display: block;
 							    position: relative;
 							    float: left;
 							    width: 70px;
 							    height: 70px;
 							    margin: 20px 30px 20px 20px;
+							    background-repeat: no-repeat;
+							    background-size: cover;
+							    background-position: center;
+							    background-color: #747474;
 	    					}
 	    					.opiniones_fix_info{
 	    						display: block;
@@ -879,7 +875,7 @@
 	display: block;
 	position: relative;
 	width: 780px;
-    max-height: 645px;
+    max-height: 660px;
     margin: 0 auto;
     /*overflow: hidden;*/
 	.opiniones_title{
@@ -913,7 +909,7 @@
 			clear: both;
     		width: auto;
     		max-height: none;
-    		margin: 15px 10px 0;
+    		margin: 28px 15px -3px 20px;
     		cursor: pointer;
 			.opiniones_content_image{
 				display: block;
@@ -922,6 +918,10 @@
 				width: 60px;
 			    height: 60px;
 			    margin: 0 10px 0 0;
+			    background-repeat: no-repeat;
+			    background-size: cover;
+			    background-position: center;
+			    background-color: #747474;
 			}
     		.opiniones_content_info{
     			display: block;
@@ -938,20 +938,18 @@
 }
 
 .opiniones_slider{
-	width: 761px;
-	height: 201px;
+	display: none;
+	width: 755px;
+	height: 200px;
 	margin: 30px auto;
-}
-
-.opiniones_slider{
 	.slick-prev{
-		left: -37px;
+		left: -43px;
 		margin: 0;
 	}
 	.opiniones_slide{
 	    position: relative;
 	    width: 365px;
-	    height: 210px;
+	    height: 205px;
 	    margin: 0 15px;
 	    background-color: #e5e1e1;
 	    .opiniones_wrapper{
@@ -969,7 +967,7 @@
 						max-height: 67px;
 						overflow: hidden;
 	    				.opiniones_content_title{
-    						margin: -7px 0 0;
+    						margin: -5px 0 0;
 	    					height: 40px;
 	    					font-size: 15px;
 	    				}
@@ -985,7 +983,7 @@
 	    }
 	}
 	.slick-next{		
-		right: -34px;
+		right: -38px;
 		margin: 0;
 	}
 	
@@ -1059,7 +1057,7 @@
 				.footer_title{ 
 					display: block;
 					position: relative;
-					font-family: Lato, Helvetica, sans-serif;
+					font-family: robotoCondesedRegular, Helvetica, sans-serif;
 				    font-size: 18px;
 				    text-align: center;
 
@@ -1100,13 +1098,13 @@
 				.footer_column_links{ 
 					display: block;
 					position: relative;
-					font-family: Lato, Helvetica, sans-serif;
+					font-family: robotoCondesedRegular, Helvetica, sans-serif;
 				    font-size: 16px;
 				}
 				.footer_column_link{ 
 					display: block;
 					position: relative;
-				    font-family: Lato, Helvetica, sans-serif;
+				    font-family: robotoCondesedRegular, Helvetica, sans-serif;
 				    font-size: 13px;
 				}
 				.footer_email{

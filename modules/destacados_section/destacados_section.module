@@ -99,7 +99,7 @@ function destacados_section_block_view($delta = '') {
           <a href='http://libertasmorelos.lo/node/".$destacado[0]->nid."'>
           <div class='destacados_content ".$destacado[0]->title."'> 
             <p class='destacados_content_title'> ".$destacado[0]->title." </p>
-            <img class='destacados_content_image' src=".$destacado[0]->image_url." />
+            <div class='destacados_content_image' style='background-image: url(".$destacado[0]->image_url.");'> </div>
             <p class='destacados_content_description'> ".$destacado[0]->description." </p>
             <div class='destacados_content_separator'></div>
           </div>

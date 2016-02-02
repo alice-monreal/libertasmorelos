@@ -242,6 +242,15 @@
 
         if($content_type == "articulo"){
 
+          // $query = db_update('node')
+          //   // ->expression('MYFIELD', 'MYFIELD + 1')
+          //   ->fields(array(
+          //     'nid' => 14,
+          //     'status' => 1,
+          //   ))
+          //   ->condition('MYFIELD', $SOMEVARIABLE)
+          //   ->execute();
+
           // Cover Image
           $cover_image = $content["body"]["#object"]->field_image_cover["und"][0]["filename"];
           $cover = $base_url.'/sites/default/files/'.$cover_image;
@@ -329,7 +338,7 @@
 
           <style>
             .section{
-              width: 750px;
+              /*width: 750px;*/
               /* margin: 0 auto;
               padding: 0; */
             }

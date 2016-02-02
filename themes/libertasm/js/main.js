@@ -46,8 +46,7 @@ jQuery( document ).ready(function( $ ) {
 	});
 
   	setTimeout(function(){
-  		$('.recent_slider').css('display', 'block');  		
-  		$('.regiones_slider').css('display', 'block');
+  		$('.slick-slider, .recent_slider, .regiones_slider, .opiniones_slider, .deportes_slider').css('opacity', '1');
   	}, 800);
 
   	// $(".fancybox").fancybox();

@@ -24,12 +24,14 @@ function poderes_section_block_view($delta = '') {
 
     $poderes = array();
     $poderesTitles = array(0 => "ejecutivo", 1 => "legislativo", 2 => "judicial");
-    // print_r("poderesTitles: ");
-    // print_r($poderesTitles);
+    
+    $item = 18;
     for($i = 0; $i < 3; $i++){
-      $item = $i+1;
-      $query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, B.entity_id, B.field_type_value FROM {node} A INNER JOIN {field_data_field_type} B ON A.nid = B.entity_id WHERE A.type = :type AND B.field_type_value = ".$item." ORDER BY nid DESC LIMIT 1";
+      $item++;
+      $query = "SELECT A.nid, A.vid, A.uid, A.type, A.status, B.entity_id, B.field_type_value FROM {node} A LEFT JOIN {field_data_field_type} B ON A.nid = B.entity_id 
+        WHERE A.type = :type AND B.field_type_value = ".$item." ORDER BY nid DESC LIMIT 1";
       $poder = db_query($query, array(':type' => 'articulo'))->fetchAll();
+      // print_r($poder);
 
       if(!empty($poder)){
         $a_id = $poder[0]->nid;
@@ -75,10 +77,8 @@ function poderes_section_block_view($delta = '') {
 
       array_push($poderes, $poder);
     }
-
     // print_r('poderes -> ');
     // print_r($poderes);
-
 
     // Get current path
     $path = current_path();
@@ -92,14 +92,12 @@ function poderes_section_block_view($delta = '') {
         <div class='poderes_container'>";
 
       foreach ($poderes as $poder) {
-        // print_r("poder");
-        // print_r($poder);
         // Link: Redirect to HOME if the article validation is empty.
         $section .= "
           <a href='http://libertasmorelos.lo/node/".$poder[0]->nid."'>
           <div class='poderes_content ".$poder[0]->title."'> 
             <p class='poderes_content_title'> ".$poder[0]->title." </p>
-            <img class='poderes_content_image' src=".$poder[0]->image_url." />
+            <div class='poderes_content_image' style='background-image: url(".$poder[0]->image_url.");'> </div>
             <p class='poderes_content_description'> ".$poder[0]->description." </p>                
           </div>
           </a>";
